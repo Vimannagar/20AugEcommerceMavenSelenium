@@ -3,6 +3,8 @@ package testclasses;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import utility.ConfigReader;
+
 
 
 public class LoginTest extends BaseTest {
@@ -11,9 +13,9 @@ public class LoginTest extends BaseTest {
 	@Test(priority = 2)
 	public void verifyLogin()
 	{
-		loginpage.enterUsername();
+		loginpage.enterUsername(ConfigReader.readConfig("username"));
 		
-		loginpage.enterPassword();
+		loginpage.enterPassword(ConfigReader.readConfig("password"));
 		
 		loginpage.clickOnSignIn();
 	}

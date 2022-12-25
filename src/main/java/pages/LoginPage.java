@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.interactions.Actions;
 
 public class LoginPage {
@@ -28,7 +29,7 @@ private	By finalsignin = By.xpath("//*[@id='signInSubmit']");
 	}
 	
 	
-	public void enterUsername()
+	public void enterUsername(String usname)
 	{
 		Actions act = new Actions(driver);
 		
@@ -38,15 +39,17 @@ private	By finalsignin = By.xpath("//*[@id='signInSubmit']");
 		
 		driver.findElement(signinhover).click();
 		
-		driver.findElement(mobilenumber).sendKeys("emailaddress");
+		driver.findElement(mobilenumber).sendKeys(usname);
 		
 		driver.findElement(continueformobile).click();
 		
+		
+		
 	}
 	
-	public void enterPassword()
+	public void enterPassword(String pwd)
 	{
-		driver.findElement(password).sendKeys("password");
+		driver.findElement(password).sendKeys(pwd);
 		
 		
 	}
