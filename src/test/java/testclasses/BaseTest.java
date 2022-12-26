@@ -7,25 +7,27 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
+import pages.BuyProduct;
 import pages.HomePage;
 import pages.LoginPage;
 import utility.ConfigReader;
 
 public class BaseTest {
 	
-	static WebDriver driver;
+public	static WebDriver driver;
 	
 	public LoginPage loginpage;
 	public HomePage homepage;
 	
+	 public BuyProduct buyproduct;
 	@BeforeSuite
-	public void initBrowser()
+	public void initBrowser() throws InterruptedException
 	{
 		 driver = new ChromeDriver();
 		 driver.manage().window().maximize();
 //		 String value = ConfigReader.readConfig("testsiteurl");
 		 driver.get(ConfigReader.readConfig("testsiteurl"));
-		 	
+		 	Thread.sleep(5000);
 	}
 	
 	@AfterSuite
@@ -41,6 +43,8 @@ public class BaseTest {
 		 loginpage = new LoginPage(driver);
 		 
 		  homepage = new HomePage(driver);
+		  
+		  buyproduct = new BuyProduct(driver);
 	}
 	
 	
