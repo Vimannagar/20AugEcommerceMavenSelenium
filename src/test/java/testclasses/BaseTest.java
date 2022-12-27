@@ -1,8 +1,8 @@
 package testclasses;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
@@ -23,7 +23,15 @@ public	static WebDriver driver;
 	@BeforeSuite
 	public void initBrowser() throws InterruptedException
 	{
-		 driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+		
+//		options.addArguments("--incognito");
+		
+		options.addArguments("--disable-notifications");
+		
+		options.addArguments("--headless");
+		
+		 driver = new ChromeDriver(options);
 		 driver.manage().window().maximize();
 //		 String value = ConfigReader.readConfig("testsiteurl");
 		 driver.get(ConfigReader.readConfig("testsiteurl"));

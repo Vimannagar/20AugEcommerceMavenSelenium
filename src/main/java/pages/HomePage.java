@@ -10,10 +10,10 @@ public class HomePage {
 	WebDriver driver;
 		
 	@FindBy(xpath = "//*[@id='twotabsearchtextbox']")
-	WebElement searchtextbox ;
+	private WebElement searchtextbox ;
 	
 	@FindBy(xpath ="//*[@id='nav-search-submit-button']")
-	WebElement searchbutton;
+	private WebElement searchbutton;
 	
 	
 	public HomePage(WebDriver driver)
