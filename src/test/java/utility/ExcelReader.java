@@ -13,8 +13,9 @@ public class ExcelReader {
 	
 	public static void writeData() throws IOException
 	{
-		String path= System.getProperty("user.dir")+"\\VimannagarTestData.xlsx";
+//		String path= System.getProperty("user.dir")+"\\VimannagarTestData.xlsx";
 
+		String path = "C:\\Users\\DELL\\Desktop\\TestDataVimannagar.xlsx";
 		File src = new File(path);
 
 		FileInputStream fis = new FileInputStream(src);
@@ -103,15 +104,17 @@ public class ExcelReader {
 
 //		String path = "F:\\Desktop\\VimanNagar\\20 Aug\\VimannagarTestData.xlsx";
 		
-		String path= System.getProperty("user.dir")+"\\VimannagarTestData.xlsx";
+//		String path= System.getProperty("user.dir")+"\\VimannagarTestData.xlsx";
 
+		
+		String path = "C:\\Users\\DELL\\Desktop\\TestDataVimannagar.xlsx";
 		File src = new File(path);
 
 		FileInputStream fis = new FileInputStream(src);
 
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
 
-		XSSFSheet sh1 = wb.getSheet("20AugBatch");
+		XSSFSheet sh1 = wb.getSheetAt(0);
 
 //		read the value from row and column
 
@@ -131,8 +134,7 @@ public class ExcelReader {
 		
 		System.out.println("Total number of column are :"+totalcolumncount);
 		
-		
-		writeData();
+
 		
 		
 
