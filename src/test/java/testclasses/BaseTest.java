@@ -29,7 +29,7 @@ public	static WebDriver driver;
 		
 		options.addArguments("--disable-notifications");
 		
-		options.addArguments("--headless");
+//		options.addArguments("--headless");
 		
 		 driver = new ChromeDriver(options);
 		 driver.manage().window().maximize();
